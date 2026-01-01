@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glowing Bulb Project</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1><i class="fas fa-lightbulb"></i> Glowing Bulb</h1>
+  <p class="subtitle">A simple interactive bulb that glows when turned on</p>
+
+  <div class="bulb-container">
+    <div class="bulb" id="bulb"></div>
+    <div class="bulb-base"></div>
+    <div class="bulb-thread"></div>
+    <div class="light-rays"></div>
+  </div>
+
+  <div class="switch-container">
+    <label class="switch">
+      <input type="checkbox" id="toggle">
+      <span class="slider"></span>
+    </label>
+
+    <div class="status" id="status">Bulb is OFF</div>
+
+    <div class="controls">
+      <button class="btn" id="turnOn">
+        <i class="fas fa-power-off"></i> Turn On
+      </button>
+      <button class="btn" id="turnOff">
+        <i class="fas fa-power-off"></i> Turn Off
+      </button>
+      <button class="btn" id="blink">
+        <i class="fas fa-star"></i> Blink Mode
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
