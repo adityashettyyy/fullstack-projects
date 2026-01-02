@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Animated Border Button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
 </head>
+
 <body>
-    <button class="animated-btn">Get Started</button>
+    <div class="container">
+        <h1><i class="fas fa-magic"></i> Animated Border Buttons</h1>
+        <p class="subtitle">Hover over each button to see unique border animations. Each button uses CSS pseudo-elements
+            and keyframe animations to create engaging hover effects.</p>
+
+        <div class="buttons-container">
+            <div class="button-row">
+                <button class="btn btn-1">
+                    <i class="fas fa-draw-polygon"></i>
+                    <span>Draw Border</span>
+                </button>
+
+                <button class="btn btn-2">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Rotating Border</span>
+                </button>
+
+                <button class="btn btn-3">
+                    <i class="fas fa-fire"></i>
+                    <span>Glowing Border</span>
+                </button>
+            </div>
+
+            <div class="button-row">
+                <button class="btn btn-4">
+                    <i class="fas fa-circle-notch"></i>
+                    <span>Dotted Border</span>
+                </button>
+
+                <button class="btn btn-5">
+                    <i class="fas fa-expand-alt"></i>
+                    <span>Expanding Border</span>
+                </button>
+
+                <button class="btn btn-6">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Neon Border</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Created with HTML & CSS | Hover effects using CSS animations</p>
+            <p>Each button uses pseudo-elements (::before, ::after) for border effects</p>
+        </div>
+    </div>
 
 </body>
+
 </html>
