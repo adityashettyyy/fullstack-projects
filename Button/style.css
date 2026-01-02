@@ -1,54 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
 body {
-  background: #0f172a;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 20px;
 }
 
-.animated-btn {
+.container {
+  text-align: center;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  color: #a0a0c0;
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.btn {
   position: relative;
-  padding: 14px 36px;
+  padding: 18px 45px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   background: transparent;
-  color: #38bdf8;
-  font-size: 16px;
-  font-weight: 500;
+  color: white;
   border: none;
   cursor: pointer;
-  letter-spacing: 0.5px;
+  outline: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 4px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
-.animated-btn::before,
-.animated-btn::after {
+/* Button 1: Draw Border Animation */
+.btn-1 {
+  color: #00dbde;
+  z-index: 1;
+}
+
+.btn-1::before,
+.btn-1::after {
   content: "";
   position: absolute;
   width: 0;
-  height: 0;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
+  height: 2px;
+  background: #00dbde;
+  transition: all 0.5s ease;
+  z-index: -1;
 }
 
-.animated-btn::before {
+.btn-1::before {
   top: 0;
   left: 0;
 }
 
-.animated-btn::after {
+.btn-1::after {
   bottom: 0;
   right: 0;
 }
 
-.animated-btn:hover::before {
+.btn-1:hover::before,
+.btn-1:hover::after {
   width: 100%;
-  height: 100%;
-  border-top-color: #38bdf8;
-  border-right-color: #38bdf8;
 }
 
-.animated-btn:hover::after {
+.btn-1 span::before,
+.btn-1 span::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background: #00dbde;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-1 span::before {
+  top: 0;
+  left: 0;
+}
+
+.btn-1 span::after {
+  bottom: 0;
+  right: 0;
+}
+
+.btn-1:hover span::before,
+.btn-1:hover span::after {
+  height: 100%;
+}
+
+/* Button 2: Rotating Border */
+.btn-2 {
+  color: #fc00ff;
+}
+
+.btn-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-bottom-color: #38bdf8;
-  border-left-color: #38bdf8;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+}
+
+.btn-2:hover::before {
+  border-top-color: #fc00ff;
+  border-right-color: #fc00ff;
+  border-bottom-color: #fc00ff;
+  border-left-color: #fc00ff;
+  border-radius: 0;
+  animation: rotateBorder 1.5s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button 3: Glowing Border */
+.btn-3 {
+  color: #ff9a00;
+}
+
+.btn-3::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff9a00, #ff0066, #00ffcc, #ff9a00);
+  background-size: 400%;
+  border-radius: 6px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.btn-3:hover::before {
+  opacity: 1;
+  animation: glowingBorder 3s linear infinite;
+}
+
+@keyframes glowingBorder {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Button 4: Dotted Border */
+.btn-4 {
+  color: #00ff88;
+}
+
+.btn-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px dotted transparent;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+}
+
+.btn-4:hover::before {
+  border-color: #00ff88;
+  animation: dottedSpin 4s linear infinite;
+}
+
+@keyframes dottedSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button 5: Expanding Border */
+.btn-5 {
+  color: #ff416c;
+}
+
+.btn-5::before,
+.btn-5::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border: 2px solid #ff416c;
+  border-radius: 4px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.btn-5:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.btn-5:hover::after {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+/* Button 6: Neon Border */
+.btn-6 {
+  color: #00eeff;
+  text-shadow: 0 0 5px #00eeff;
+}
+
+.btn-6::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(45deg, #00eeff, #ff00ff, #00eeff);
+  border-radius: 6px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-6:hover::before {
+  opacity: 1;
+  animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    filter: blur(2px);
+    opacity: 0.8;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Button Hover Effects */
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #00dbde;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    min-width: 280px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    min-width: 250px;
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 25px 20px;
+  }
 }
