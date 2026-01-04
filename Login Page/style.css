@@ -1,0 +1,311 @@
+/* -------------------------------------------------------------------------- */
+/* VARIABLES                                  */
+/* -------------------------------------------------------------------------- */
+:root {
+    /* Brand Colors - Inspired by premium SaaS palettes (e.g., Stripe/Linear) */
+    --color-primary: #5469d4;
+    --color-primary-hover: #4456b3;
+    
+    /* Neutral / Text Colors */
+    --color-text-main: #1a1f36;
+    --color-text-subtle: #697386;
+    --color-text-placeholder: #a1a9b8;
+    
+    /* Backgrounds & Borders */
+    --color-bg-body: #f7f9fc; /* Very subtle cool gray */
+    --color-bg-card: #ffffff;
+    --color-border: #e6e8eb;
+    --color-input-bg: #ffffff;
+    
+    /* Functional */
+    --focus-ring: 0 0 0 4px rgba(84, 105, 212, 0.25);
+    --error-color: #d93025;
+
+    /* Spacing System (8px Baseline) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --border-radius: 8px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESET                                    */
+/* -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* Crisp text on Mac */
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* LAYOUT                                    */
+/* -------------------------------------------------------------------------- */
+.login-container {
+    width: 100%;
+    padding: var(--space-md);
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background: var(--color-bg-card);
+    width: 100%;
+    max-width: 448px; /* Classic login card width */
+    padding: 48px;
+    border-radius: 12px;
+    
+    /* Multi-layer shadow for premium depth */
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(0, 0, 0, 0.02); /* Subtle border effect via shadow */
+}
+
+/* -------------------------------------------------------------------------- */
+/* TYPOGRAPHY                                  */
+/* -------------------------------------------------------------------------- */
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.brand-logo {
+    margin-bottom: var(--space-lg);
+}
+
+.login-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+}
+
+.login-header p {
+    color: var(--color-text-subtle);
+    font-size: var(--font-size-base);
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORM                                     */
+/* -------------------------------------------------------------------------- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-main);
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    line-height: 1.6; /* Comfortable cursor height */
+    color: var(--color-text-main);
+    background-color: var(--color-input-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--color-text-placeholder);
+}
+
+/* Input States */
+.form-group input:hover {
+    border-color: #cbd5e1;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--focus-ring);
+}
+
+/* Error State Example (Add class .error to .form-group) */
+.form-group.error input {
+    border-color: var(--error-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/* UTILITIES / ACTIONS                             */
+/* -------------------------------------------------------------------------- */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text-main);
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Checkbox Checked State */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Checkmark Icon (Pure CSS) */
+.checkbox-container input:checked ~ .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: #cbd5e1;
+}
+
+.checkbox-container input:focus ~ .checkmark {
+    box-shadow: var(--focus-ring);
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+/* BUTTON                                    */
+/* -------------------------------------------------------------------------- */
+.btn-primary {
+    width: 100%;
+    padding: 11px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border: 1px solid transparent; /* Maintain size parity */
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+/* -------------------------------------------------------------------------- */
+/* FOOTER                                    */
+/* -------------------------------------------------------------------------- */
+.login-footer {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.login-footer p {
+    font-size: 14px;
+    color: var(--color-text-subtle);
+}
+
+.login-footer a {
+    color: var(--color-text-main);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE                                  */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 32px 24px;
+        box-shadow: none; /* Flatter look on mobile often feels cleaner */
+        background: transparent;
+    }
+    
+    body {
+        background-color: #fff; /* White background on mobile */
+        align-items: flex-start;
+    }
+
+    .login-container {
+        padding-top: 48px;
+    }
+}
