@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern SaaS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <!-- Top: Branding Section -->
+            <div class="sidebar-branding">
+                <div class="brand-logo">
+                    <span class="logo-icon">SaaS</span>
+                </div>
+                <div class="brand-details">
+                    <h1 class="product-name">SaaS Platform</h1>
+                    <p class="product-tagline">Professional Edition</p>
+                </div>
+            </div>
+
+            <!-- Middle: Navigation Section -->
+            <div class="sidebar-navigation">
+                <h2 class="nav-section-title">MAIN NAVIGATION</h2>
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </span>
+                            <span class="nav-label">Dashboard</span>
+                            <span class="active-indicator"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </span>
+                            <span class="nav-label">Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </span>
+                            <span class="nav-label">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-users"></i>
+                            </span>
+                            <span class="nav-label">Team</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messages" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-comments"></i>
+                            </span>
+                            <span class="nav-label">Messages</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-cog"></i>
+                            </span>
+                            <span class="nav-label">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Divider -->
+                <div class="nav-divider"></div>
+
+                <!-- Secondary Navigation -->
+                <h2 class="nav-section-title">WORKSPACE</h2>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#library" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span class="nav-label">Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#calendar" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </span>
+                            <span class="nav-label">Calendar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reports" class="nav-link">
+                            <span class="nav-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </span>
+                            <span class="nav-label">Reports</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Bottom: Account Section -->
+            <div class="sidebar-account">
+                <div class="account-info">
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=6366f1&color=fff&bold=true" alt="Alex Johnson">
+                    </div>
+                    <div class="user-details">
+                        <h3 class="user-name">Aditya Shetty</h3>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+                <div class="account-actions">
+                    <a href="#logout" class="logout-link" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h2>Dashboard Overview</h2>
+                    <p class="page-description">Welcome back, Aditya. Here's what's happening with your projects today.</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-action">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">4</span>
+                    </div>
+                    <div class="header-action">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="dashboard-card">
+                    <h3 class="card-title">Performance Summary</h3>
+                    <p class="card-text">Your team's performance is up <strong>12%</strong> compared to last month.</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="card-title">Active Projects</h3>
+                    <p class="card-text">You have <strong>7 active projects</strong> across 3 teams.</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="card-title">Recent Activity</h3>
+                    <p class="card-text">3 new tasks were assigned to you in the last 24 hours.</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="card-title">Upcoming Deadlines</h3>
+                    <p class="card-text">2 project deadlines are approaching this week.</p>
+                </div>
+
+                <div class="content-message">
+                    <h3>Welcome to Your Dashboard</h3>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
