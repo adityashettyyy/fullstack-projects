@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    
+    <!-- Main Content Container -->
+    <main class="container">
+        <!-- Glassmorphic Login Card -->
+        <div class="glass-card">
+            <!-- Card Header -->
+            <header class="card-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h1 class="card-title">Welcome Back</h1>
+                </div>
+                <p class="card-subtitle">Sign in to your account to continue</p>
+            </header>
+            
+            <!-- Login Form -->
+            <form class="login-form">
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <div class="input-container">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="glass-input"
+                            placeholder="you@example.com"
+                            required
+                            aria-label="Email address"
+                        >
+                        <div class="input-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-key"></i> Password
+                    </label>
+                    <div class="input-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="glass-input"
+                            placeholder="Enter your password"
+                            required
+                            aria-label="Password"
+                        >
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="button" class="password-toggle" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Remember & Forgot -->
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember" class="checkbox-hidden">
+                        <span class="custom-checkbox"></span>
+                        <span class="checkbox-label">Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <!-- Login Button -->
+                <button type="submit" class="glass-button" aria-label="Login to account">
+                    <span class="button-text">Sign In</span>
+                    <i class="fas fa-arrow-right button-icon"></i>
+                </button>
+                
+                <!-- Divider -->
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-text">or continue with</span>
+                    <span class="divider-line"></span>
+                </div>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button type="button" class="social-button google" aria-label="Login with Google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-button github" aria-label="Login with GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </button>
+                </div>
+                
+                <!-- Sign Up Link -->
+                <p class="signup-text">
+                    Don't have an account? 
+                    <a href="#" class="signup-link">Create one now</a>
+                </p>
+            </form>
+            
+            <!-- Footer -->
+            <footer class="card-footer">
+                <p class="footer-text">© 2023 Glassmorphism UI. All rights reserved.</p>
+            </footer>
+        </div>
+        
+        <!-- Theme Toggle (CSS-only) -->
+        <div class="theme-switch-container">
+            <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+            <label for="theme-toggle" class="theme-label">
+                <span class="theme-text">Dark Mode</span>
+                <div class="theme-slider">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </label>
+        </div>
+    </main>
+    
+    <!-- Design Credit -->
+    
+</body>
+</html>
