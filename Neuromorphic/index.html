@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphism Login Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main class="login-container">
+        <!-- Neumorphic Login Card -->
+        <div class="login-card">
+            <!-- Card Header -->
+            <header class="card-header">
+                <h1 class="card-title">Welcome Back</h1>
+                <p class="card-subtitle">Sign in to your account</p>
+            </header>
+            
+            <!-- Login Form -->
+            <form class="login-form">
+                <!-- Email/Username Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email or Username</label>
+                    <div class="input-container">
+                        <i class="input-icon fas fa-user"></i>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            class="form-input"
+                            placeholder="Enter your email or username"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-container">
+                        <i class="input-icon fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="login-button">
+                    <span class="button-text">Login</span>
+                    <i class="button-icon fas fa-arrow-right"></i>
+                </button>
+                
+                <!-- Sign Up Link -->
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign up</a>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Design Note -->
+        <div class="design-note">
+            <p>Modern Neumorphism Design</p>
+        </div>
+    </main>
+    
+    <!-- Theme Toggle Switch (CSS-only) -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+            <span class="theme-text">Dark Mode</span>
+            <span class="theme-slider"></span>
+        </label>
+    </div>
+</body>
+</html>
